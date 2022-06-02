@@ -11,6 +11,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var homeFragment: HomeFragment
+    private lateinit var allBuysFragment: AllBuysFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,6 +20,8 @@ class MainActivity : AppCompatActivity() {
         disableBarColorAndDarkTheme()
         loadFragments()
         setFragment(homeFragment)
+
+        configClicks()
 
         binding.chipNavigationBar.setItemSelected(R.id.menuclip_home, true)
 
@@ -32,6 +35,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun loadFragments() {
         homeFragment = HomeFragment()
+        allBuysFragment = AllBuysFragment()
     }
 
     private fun disableBarColorAndDarkTheme() {
@@ -44,6 +48,19 @@ class MainActivity : AppCompatActivity() {
         decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                 or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN)
 
+    }
+
+    private fun configClicks() {
+        binding.chipNavigationBar.setOnItemSelectedListener {
+            when (it) {
+                R.id.menuclip_home -> {
+                    setFragment(homeFragment)
+                }
+                R.id.menuclip_compras-> {
+                    setFragment(allBuysFragment)
+                }
+            }
+        }
     }
 
 }
