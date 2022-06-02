@@ -12,6 +12,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var homeFragment: HomeFragment
     private lateinit var allBuysFragment: AllBuysFragment
+    private lateinit var aboutUsFragment: AboutUsFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +37,7 @@ class MainActivity : AppCompatActivity() {
     private fun loadFragments() {
         homeFragment = HomeFragment()
         allBuysFragment = AllBuysFragment()
+        aboutUsFragment = AboutUsFragment()
     }
 
     private fun disableBarColorAndDarkTheme() {
@@ -58,6 +60,9 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.menuclip_compras-> {
                     setFragment(allBuysFragment)
+                }
+                R.id.menuclip_sobre-> {
+                    setFragment(aboutUsFragment)
                 }
             }
         }

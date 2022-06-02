@@ -28,12 +28,14 @@ class AllBuysFragment : Fragment() {
         compraViewModel = ViewModelProvider(this)[CompraViewModel::class.java]
         _binding = FragmentAllBuysBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
+        configClicks()
         recyclerLoad()
 
         mListener = object : CompraListener {
             override fun onClick(id: Int) {
-
+                var intent = Intent(context, InfoBuyActivity::class.java)
+                intent.putExtra("compra_id", id)
+                startActivity(intent)
             }
         }
 
@@ -73,6 +75,11 @@ class AllBuysFragment : Fragment() {
 
         observer()
 
+    }
+    private fun configClicks() {
+        binding.flotButtonAdd.setOnClickListener {
+            startActivity(Intent(context, BuyFormActivity::class.java))
+        }
     }
 
 }

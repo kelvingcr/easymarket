@@ -17,7 +17,7 @@ class CompraHolder(itemView: View, private val listener: CompraListener) : Recyc
         textName.text = compra.nome
 
         val tvPreco = itemView.findViewById<TextView>(R.id.tvPreco)
-        tvPreco.text = "R" + Utils.formatNumber(compra.itens.sumOf { it.valor })
+        tvPreco.text = Utils.formatNumber(compra.itens.sumOf { it.valor })
 
         val tvData = itemView.findViewById<TextView>(R.id.tvData)
         tvData.text = compra.data

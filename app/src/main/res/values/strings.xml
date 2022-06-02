@@ -2,4 +2,6 @@
     <string name="app_name">Easy Market 2</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_dev">Desenvolvido por Kelvin Rodrigues</string>
+    <string name="app_use">Easy Market, aplicativo desenvolvido para facilitar as compras no mercado, criado para substituir o caderno e lápis!</string>
 </resources>

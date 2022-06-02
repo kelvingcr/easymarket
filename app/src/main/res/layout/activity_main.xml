@@ -8,23 +8,21 @@
     android:background="@color/azulEscuro"
     android:fitsSystemWindows="true">
 
-    <TextView
-        android:id="@+id/txtMarca"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="20dp"
 
-        android:text="🛒 Easy Market"
-        android:textColor="@color/white"
-        android:textSize="32dp" />
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/logomarca"/>
 
     <FrameLayout
         android:id="@+id/fragLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/chipNavigationBar"
-        android:layout_below="@+id/txtMarca"
+        android:layout_below="@+id/imgLogo"
         app:layout_constraintBottom_toTopOf="@+id/chipNavigationBar" />
 
 

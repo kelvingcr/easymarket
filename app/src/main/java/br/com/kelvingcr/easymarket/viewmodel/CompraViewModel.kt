@@ -8,6 +8,10 @@ import br.com.kelvingcr.easymarket.model.CompraModel
 import br.com.kelvingcr.easymarket.model.ItemModel
 import br.com.kelvingcr.easymarket.repository.CompraRepository
 import java.text.NumberFormat
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
+import kotlin.collections.HashMap
 
 class CompraViewModel(application: Application) : AndroidViewModel(application) {
 
@@ -45,6 +49,28 @@ class CompraViewModel(application: Application) : AndroidViewModel(application) 
         list.forEach { it.itens.forEach { itens.add(it) } }
         mAllBuyPrice.value = NumberFormat.getCurrencyInstance().format(itens.sumOf { it.valor })
 
+    }
+
+     fun getValueForDate() : ArrayList<CompraModel> {
+        val listaFiltrada = ArrayList<CompraModel>()
+        val list = getAll()
+        val dates = HashMap<Int, Date>()
+
+        list.forEach { dates.put(it.id, format(it.data)) }
+
+        for(x in dates) {
+            if(x.value.month == Date().month){
+                listaFiltrada.add(get(x.key))
+            }
+        }
+
+        return listaFiltrada
+    }
+
+    private fun format(data: String) : Date {
+        val simpleDataFormat = SimpleDateFormat("dd/MM/yyyy")
+        val dataFormatada = simpleDataFormat.parse(data)
+        return dataFormatada
     }
 
 }
