@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/azulEscuro"
+    android:fitsSystemWindows="true">
+
+    <TextView
+        android:id="@+id/txtMarca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="20dp"
+
+        android:text="🛒 Easy Market"
+        android:textColor="@color/white"
+        android:textSize="32dp" />
+
+    <FrameLayout
+        android:id="@+id/fragLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/chipNavigationBar"
+        android:layout_below="@+id/txtMarca"
+        app:layout_constraintBottom_toTopOf="@+id/chipNavigationBar" />
+
+
+    <com.ismaeldivita.chipnavigation.ChipNavigationBar
+        android:id="@+id/chipNavigationBar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/azulEscuro"
+        app:cnb_unselectedColor="@color/white"
+        android:elevation="16dp"
+        app:cnb_menuResource="@menu/menu_clip"
+        android:layout_alignParentBottom="true"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+</RelativeLayout>
