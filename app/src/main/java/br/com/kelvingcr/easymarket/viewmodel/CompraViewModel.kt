@@ -47,6 +47,4 @@ class CompraViewModel(application: Application) : AndroidViewModel(application) 
 
     }
 
-
-
 }
