@@ -1,4 +1,4 @@
-package br.com.kelvingcr.easymarket
+package br.com.kelvingcr.easymarket.utils
 
 interface AlertDialogListener {
 

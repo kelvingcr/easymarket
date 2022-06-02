@@ -4,9 +4,9 @@ import android.view.View
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
-import br.com.kelvingcr.easymarket.CompraListener
+import br.com.kelvingcr.easymarket.utils.CompraListener
 import br.com.kelvingcr.easymarket.R
-import br.com.kelvingcr.easymarket.Utils
+import br.com.kelvingcr.easymarket.utils.Utils
 import br.com.kelvingcr.easymarket.model.CompraModel
 
 class CompraHolder(itemView: View, private val listener: CompraListener) : RecyclerView.ViewHolder(itemView) {

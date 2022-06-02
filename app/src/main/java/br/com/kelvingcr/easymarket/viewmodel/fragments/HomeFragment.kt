@@ -1,21 +1,15 @@
-package br.com.kelvingcr.easymarket
+package br.com.kelvingcr.easymarket.viewmodel.fragments
 
-import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import br.com.kelvingcr.easymarket.databinding.FragmentHomeBinding
-import br.com.kelvingcr.easymarket.model.CompraModel
 import br.com.kelvingcr.easymarket.viewmodel.CompraViewModel
-import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.collections.ArrayList
-import kotlin.collections.HashMap
 
 
 class HomeFragment : Fragment() {

@@ -9,6 +9,8 @@ import androidx.lifecycle.ViewModelProvider
 import br.com.kelvingcr.easymarket.databinding.ActivityInfoBuyBinding
 import br.com.kelvingcr.easymarket.model.CompraModel
 import br.com.kelvingcr.easymarket.model.ItemModel
+import br.com.kelvingcr.easymarket.utils.AlertDialogListener
+import br.com.kelvingcr.easymarket.utils.Utils
 import br.com.kelvingcr.easymarket.viewmodel.CompraViewModel
 import java.text.NumberFormat
 

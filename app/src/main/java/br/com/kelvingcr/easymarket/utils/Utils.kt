@@ -1,4 +1,4 @@
-package br.com.kelvingcr.easymarket
+package br.com.kelvingcr.easymarket.utils
 
 import android.app.AlertDialog
 import android.content.Context

@@ -1,4 +1,4 @@
-package br.com.kelvingcr.easymarket
+package br.com.kelvingcr.easymarket.viewmodel.fragments
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,8 +9,11 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import br.com.kelvingcr.easymarket.BuyFormActivity
+import br.com.kelvingcr.easymarket.InfoBuyActivity
 import br.com.kelvingcr.easymarket.adapter.CompraAdapter
 import br.com.kelvingcr.easymarket.databinding.FragmentAllBuysBinding
+import br.com.kelvingcr.easymarket.utils.CompraListener
 import br.com.kelvingcr.easymarket.viewmodel.CompraViewModel
 
 

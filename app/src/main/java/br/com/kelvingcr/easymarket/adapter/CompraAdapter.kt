@@ -3,7 +3,7 @@ package br.com.kelvingcr.easymarket.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import br.com.kelvingcr.easymarket.CompraListener
+import br.com.kelvingcr.easymarket.utils.CompraListener
 import br.com.kelvingcr.easymarket.R
 import br.com.kelvingcr.easymarket.adapter.holder.CompraHolder
 import br.com.kelvingcr.easymarket.model.CompraModel

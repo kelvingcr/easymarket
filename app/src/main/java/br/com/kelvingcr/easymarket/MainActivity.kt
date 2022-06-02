@@ -6,6 +6,9 @@ import android.view.View
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import br.com.kelvingcr.easymarket.databinding.ActivityMainBinding
+import br.com.kelvingcr.easymarket.viewmodel.fragments.AboutUsFragment
+import br.com.kelvingcr.easymarket.viewmodel.fragments.AllBuysFragment
+import br.com.kelvingcr.easymarket.viewmodel.fragments.HomeFragment
 
 class MainActivity : AppCompatActivity() {
 
