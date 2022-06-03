@@ -1,12 +1,15 @@
 package br.com.kelvingcr.easymarket
 
 import android.R
+import android.content.pm.ActivityInfo
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.KeyEvent
 import android.view.View
 import android.widget.ArrayAdapter
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.ViewModelProvider
 import br.com.kelvingcr.easymarket.databinding.ActivityBuyFormBinding
 import br.com.kelvingcr.easymarket.model.CompraModel
@@ -35,9 +38,12 @@ class BuyFormActivity : AppCompatActivity(), View.OnClickListener {
 
         binding.btnItem.setOnClickListener(this)
         binding.btnCompra.setOnClickListener(this)
+        binding.flotPriceCheck.setOnClickListener(this)
 
         configAdapter()
         removeItemInList()
+
+        disableBarColorAndDarkTheme()
 
     }
 
@@ -69,9 +75,7 @@ class BuyFormActivity : AppCompatActivity(), View.OnClickListener {
 
                         compra = CompraModel(0, nomeCompra, lista, Utils.dataAtual(Date()))
 
-                        val subtotal = NumberFormat.getCurrencyInstance().format(lista.sumOf { it.valor })
-
-                        Utils.AlertDialogBuilderSimple("Confirmação", "Deseja salvar essa compra? Total de itens: ${lista.count()}, Subtotal: $subtotal", this, object :
+                        Utils.AlertDialogBuilderSimple("Confirmação", "Deseja salvar essa compra? Total de itens: ${lista.count()}, Subtotal: ${getSubTotal(lista)}", this, object :
                             AlertDialogListener {
                             override fun onPressPositiveButton() { compraViewModel.save(compra)
                                 finish()
@@ -91,6 +95,14 @@ class BuyFormActivity : AppCompatActivity(), View.OnClickListener {
                     override fun onPressPositiveButton() { finish() }
                     override fun onPressNeutralButton() {}
                 }, "Finalizar", "Voltar")
+            }
+        } else if (view.id == binding.flotPriceCheck.id) {
+
+            if(lista.isNotEmpty()) {
+                Toast.makeText(this, "Você ja gastou: " + getSubTotal(lista), Toast.LENGTH_LONG)
+                    .show()
+            } else {
+                Toast.makeText(this, "Nenhum item foi encontrado.", Toast.LENGTH_LONG).show()
             }
         }
     }
@@ -139,5 +151,24 @@ class BuyFormActivity : AppCompatActivity(), View.OnClickListener {
         return super.onKeyDown(keyCode, event)
     }
 
+    private fun disableBarColorAndDarkTheme() {
+
+        //Desativa a rotação de tela
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_NOSENSOR);
+
+        //Desativa o tema escuro
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
+        // Bar transparente
+        val decorView = window.decorView
+        decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN)
+
+    }
+
+
+   private fun getSubTotal(list: ArrayList<ItemModel>) : String {
+         return NumberFormat.getCurrencyInstance().format(list.sumOf { it.valor })
+    }
 
 }

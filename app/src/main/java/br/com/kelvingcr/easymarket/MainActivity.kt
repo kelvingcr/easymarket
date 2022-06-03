@@ -1,5 +1,7 @@
 package br.com.kelvingcr.easymarket
 
+import android.app.Activity
+import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -26,7 +28,6 @@ class MainActivity : AppCompatActivity() {
         setFragment(homeFragment)
 
         configClicks()
-
         binding.chipNavigationBar.setItemSelected(R.id.menuclip_home, true)
 
     }
@@ -44,6 +45,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun disableBarColorAndDarkTheme() {
+
+        //Desativa a rotação de tela
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_NOSENSOR);
 
         //Desativa o tema escuro
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);

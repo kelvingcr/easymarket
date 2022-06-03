@@ -1,10 +1,12 @@
 package br.com.kelvingcr.easymarket
 
 import android.R
+import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.ViewModelProvider
 import br.com.kelvingcr.easymarket.databinding.ActivityInfoBuyBinding
 import br.com.kelvingcr.easymarket.model.CompraModel
@@ -28,7 +30,7 @@ class InfoBuyActivity : AppCompatActivity(), View.OnClickListener{
         binding = ActivityInfoBuyBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-
+        disableBarColorAndDarkTheme()
 
         val ss:Int = intent.getIntExtra("compra_id", 0)
         compra = compraViewModel.get(ss)
@@ -43,7 +45,7 @@ class InfoBuyActivity : AppCompatActivity(), View.OnClickListener{
         binding.tvNomeCompra.text = compra.nome
 
         val total = compra.itens.sumOf { it.valor }
-        binding.tvValor.text = "R"+ NumberFormat.getCurrencyInstance().format(total)
+        binding.tvValor.text =  NumberFormat.getCurrencyInstance().format(total)
 
         val list = compra.itens
 
@@ -65,4 +67,20 @@ class InfoBuyActivity : AppCompatActivity(), View.OnClickListener{
 
         })
     }
+    private fun disableBarColorAndDarkTheme() {
+
+        //Desativa a rotação de tela
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_NOSENSOR);
+
+        //Desativa o tema escuro
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
+        // Bar transparente
+        val decorView = window.decorView
+        decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN)
+
+    }
+
+
 }

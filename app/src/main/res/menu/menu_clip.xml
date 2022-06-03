@@ -6,18 +6,18 @@
         android:id="@+id/menuclip_home"
         android:title="Inicio"
         android:icon="@drawable/ic_baseline_home_24"
-        app:cnb_iconColor="@color/blue"/>
+        app:cnb_iconColor="@android:color/holo_orange_dark"/>
 
     <item
         android:id="@+id/menuclip_compras"
         android:title="Compras"
         android:icon="@drawable/ic_cart"
-        app:cnb_iconColor="@color/blue"/>
+        app:cnb_iconColor="@android:color/holo_orange_dark"/>
 
     <item
         android:id="@+id/menuclip_sobre"
         android:title="Sobre"
         android:icon="@drawable/ic_person"
-        app:cnb_iconColor="@color/blue"/>
+        app:cnb_iconColor="@android:color/holo_orange_dark"/>
 
 </menu>

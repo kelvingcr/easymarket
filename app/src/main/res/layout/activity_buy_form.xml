@@ -4,95 +4,128 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BuyFormActivity"
     android:background="@color/azulEscuro"
-    android:padding="16dp">
+    android:fitsSystemWindows="true"
+    tools:context=".BuyFormActivity">
 
 
-    <EditText
-        android:id="@+id/edtProduto"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:hint="Nome do produto"
-        android:maxLength="10"
-        android:inputType="text"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/custom_input"
-        android:padding="8dp"/>
+        android:padding="16dp">
 
-    <EditText
-        android:id="@+id/edtPreco"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Preço do produto"
-        android:maxLength="5"
-        android:layout_marginTop="8dp"
-        android:inputType="numberDecimal"
-        android:background="@drawable/custom_input"
-        app:layout_constraintTop_toBottomOf="@+id/edtProduto"
-        tools:layout_editor_absoluteX="16dp"
-        android:padding="8dp"/>
+        <EditText
+            android:id="@+id/edtProduto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/custom_input"
+            android:hint="Nome do produto"
+            android:inputType="text"
+            android:maxLength="10"
+            android:padding="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/edtCompra"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:hint="Nome da compra"
-        android:maxLength="17"
-        android:inputType="text"
-        android:background="@drawable/custom_input"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtPreco"
-        android:padding="8dp"/>
+        <EditText
+            android:id="@+id/edtPreco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/custom_input"
+            android:hint="Preço do produto"
+            android:inputType="numberDecimal"
+            android:maxLength="5"
+            android:padding="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/edtProduto"
+            tools:layout_editor_absoluteX="16dp" />
 
-    <TextView
-        android:id="@+id/text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Lista de itens"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="18dp"
-        app:layout_constraintTop_toBottomOf="@+id/edtCompra" />
+        <EditText
+            android:id="@+id/edtCompra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/custom_input"
+            android:hint="Nome da compra"
+            android:inputType="text"
+            android:maxLength="17"
+            android:padding="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtPreco" />
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="Lista de itens"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtCompra" />
 
 
-    <ListView
-        android:id="@+id/listView"
-        android:layout_marginTop="8dp"
-        android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:padding="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/text"
-        tools:layout_editor_absoluteX="16dp"
-        tools:listitem="a"
-        android:background="@drawable/custom_input"/>
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/custom_input"
+            android:padding="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/text"
+            tools:layout_editor_absoluteX="16dp"
+            tools:listitem="a" />
 
-    <Button
-        android:id="@+id/btnItem"
-        android:layout_width="170dp"
-        android:layout_height="wrap_content"
-        android:text="Adicionar item"
-        android:elevation="18dp"
-        android:backgroundTint="@android:color/holo_orange_dark"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <android.widget.Button
+            android:id="@+id/btnItem"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_orange_dark"
+            android:elevation="18dp"
+            android:drawableLeft="@drawable/ic_add"
+            android:paddingStart="16dp"
+            android:paddingEnd="0dp"
+            android:drawablePadding="-40dp"
+            android:text="Adicionar item"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/btnCompra"
-        android:layout_width="170dp"
-        android:layout_height="wrap_content"
-        android:text="Salvar compra"
-        android:backgroundTint="@android:color/holo_orange_dark"
-        android:elevation="18dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <android.widget.Button
+            android:id="@+id/btnCompra"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_orange_dark"
+            android:elevation="18dp"
+            android:drawableLeft="@drawable/ic_save"
+            android:paddingStart="16dp"
+            android:paddingEnd="0dp"
+            android:drawablePadding="-40dp"
+            android:text="Salvar compra"
+            app:layout_constraintBottom_toTopOf="@+id/btnItem"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/flotPriceCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:outlineAmbientShadowColor="@color/cinzaPrincipal"
+            android:src="@drawable/ic_price_check"
+            app:backgroundTint="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/listView"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -31,6 +31,7 @@ class AllBuysFragment : Fragment() {
         compraViewModel = ViewModelProvider(this)[CompraViewModel::class.java]
         _binding = FragmentAllBuysBinding.inflate(inflater, container, false)
         val root: View = binding.root
+
         configClicks()
         recyclerLoad()
 
@@ -77,7 +78,6 @@ class AllBuysFragment : Fragment() {
         recycler.adapter = mAdapter
 
         observer()
-
     }
     private fun configClicks() {
         binding.flotButtonAdd.setOnClickListener {
